@@ -30,8 +30,6 @@ export default class ModuleLoader extends Vue {
   private moduleLoaded = false
 
   async buttonClick(): Promise<void> {
-    let count = this.$store.getters.getCount
-    this.$store.dispatch('decrement')
     if (!this.moduleLoaded) {
       let {robot_img_url} = await import('../modules/getRobot')
       this.robot_src = robot_img_url
